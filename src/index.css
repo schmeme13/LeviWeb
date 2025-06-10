@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 min-h-screen font-sans antialiased;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-all duration-200 hover:shadow-md;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200;
+  }
+
+  .btn {
+    @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-500;
+  }
+}
+
+/* Step indicator styles */
+.step {
+  @apply flex flex-col items-center;
+}
+
+.step-circle {
+  @apply w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-medium mb-2 transition-all duration-200;
+}
+
+.step.active .step-circle {
+  @apply bg-blue-600 text-white shadow-md shadow-blue-200;
+}
+
+.step-text {
+  @apply text-sm text-gray-500 font-medium;
+}
+
+.step.active .step-text {
+  @apply text-blue-600;
+}
+
+/* Calendar customization */
+.react-calendar {
+  @apply w-full max-w-md mx-auto bg-white border-0 shadow-lg rounded-2xl p-4;
+}
+
+.react-calendar__tile {
+  @apply p-4 text-center hover:bg-blue-50 rounded-lg transition-all duration-200;
+}
+
+.react-calendar__tile--active {
+  @apply bg-blue-600 text-white hover:bg-blue-700 shadow-md shadow-blue-200;
+}
+
+.react-calendar__tile--now {
+  @apply bg-blue-50 font-medium;
+}
+
+.react-calendar__navigation {
+  @apply mb-4;
+}
+
+.react-calendar__navigation button {
+  @apply p-2 hover:bg-gray-50 rounded-lg transition-all duration-200 text-gray-700;
+}
+
+.react-calendar__navigation button:disabled {
+  @apply bg-gray-50 opacity-50;
+}
+
+/* Form styles */
+input:focus, textarea:focus {
+  @apply outline-none ring-2 ring-blue-500 border-blue-500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .page-container {
+    @apply px-4 py-6;
+  }
+}
